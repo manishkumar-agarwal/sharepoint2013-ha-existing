@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>20ab8a5c-6080-453a-80b1-b208c9dbc43e</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkIdentifier>Deployment</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>1.0</TargetFrameworkVersion>
+    <PrepareForBuildDependsOn>
+    </PrepareForBuildDependsOn>
+  </PropertyGroup>
+  <Import Condition=" Exists('Deployment.targets') " Project="Deployment.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- vertag<:>start tokens<:>maj.min -->
+  <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
+  <!-- vertag<:>end -->
+  <ItemGroup>
+    <Content Include="azuredeploy.parameters.json" />
+    <Content Include="azuredeploy.json" />
+    <None Include="Deployment.targets">
+      <Visible>False</Visible>
+    </None>
+    <Content Include="Deploy-AzureResourceGroup.ps1" />
+    <Content Include="nestedtemplates\provisioningPrimaryDomainController.json" />
+    <Content Include="nestedtemplates\configuringSharePoint.json" />
+    <Content Include="nestedtemplates\configuringSQLAlwaysOnCluster.json" />
+    <Content Include="nestedtemplates\configuringBackupDomainController.json" />
+    <Content Include="mainTemplate.json" />
+    <Content Include="dsc\ConfigureSharePointServerHA.ps1.zip" />
+    <Content Include="dscv2\ConfigureSharePointServerHA.ps1.zip" />
+    <Content Include="README.md" />
+    <Content Include="dsc\CreateADBDC.ps1.zip" />
+    <Content Include="dsc\CreateADPDC.ps1.zip" />
+    <Content Include="dsc\CreateFailoverCluster.ps1.zip" />
+    <Content Include="dsc\CreateFileShareWitness.ps1.zip" />
+    <Content Include="dsc\PrepareAlwaysOnSqlServer.ps1.zip" />
+    <Content Include="dscv2\ConfigureADBDC.ps1.zip" />
+    <Content Include="dscv2\ConfigureAlwaysOnSqlServer.ps1.zip" />
+    <Content Include="dscv2\ConfigureFailoverCluster.ps1.zip" />
+    <Content Include="dscv2\ConfigureFileShareWitness.ps1.zip" />
+    <Content Include="dscv2\CreateADPDC.ps1.zip" />
+    <Content Include="dscv2\PrepareADBDC.ps1.zip" />
+    <Content Include="dscv2\PrepareAlwaysOnSqlServer.ps1.zip" />
+    <Content Include="dscv2\PrepareFailoverCluster.ps1.zip" />
+    <Content Include="dscv2\PrepareFileShareWitness.ps1.zip" />
+    <Content Include="dscv2\PrepareSharePointServerHA.ps1.zip" />
+    <Content Include="nestedtemplates\availabilitySets.json" />
+    <Content Include="nestedtemplates\creatingNICS.json" />
+    <Content Include="nestedtemplates\creatingStorageAccounts.json" />
+    <Content Include="nestedtemplates\nic.json" />
+    <Content Include="nestedtemplates\provisioningBackupDomainController.json" />
+    <Content Include="nestedtemplates\provisioningSQLVMs.json" />
+    <Content Include="nestedtemplates\provisioningSharepointVMs.json" />
+    <Content Include="nestedtemplates\publicip-existing.json" />
+    <Content Include="nestedtemplates\publicip-new.json" />
+    <Content Include="nestedtemplates\publicip-rdp.json" />
+    <Content Include="nestedtemplates\setupLBs.json" />
+    <Content Include="nestedtemplates\vnet-new.json" />
+    <Content Include="nestedtemplates\vnet-with-dns-server.json" />
+  </ItemGroup>
+  <Target Name="GetReferenceAssemblyPaths" />
+</Project>
